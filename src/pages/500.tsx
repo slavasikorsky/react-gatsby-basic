@@ -7,15 +7,15 @@ import { StaticImage } from "gatsby-plugin-image";
 
 type Props = {};
 
-const NotFoundPage = (props: Props) => {
+const ServerErrorPage = (props: Props) => {
 	return (
 		<Layout>
 			<Container margin={"20px"} direction="column">
-				<Title level={1} color="#4a4a4a" margin="0">
-					404 Not Found Page
+				<Title level={1} color="#4a4a4a">
+					500 Server error
 				</Title>
 				<StaticImage
-					src="../images/404.jpg"
+					src="../images/500.webp"
 					alt="404 page"
 					width={200}
 				/>
@@ -24,6 +24,6 @@ const NotFoundPage = (props: Props) => {
 	);
 };
 
-export default NotFoundPage;
+export default ServerErrorPage;
 
 export const Head = () => <SEO title="404 page | my Gatsby site" />;

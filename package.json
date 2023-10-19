@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "react-gatsby-test",
-  "author": "Viacheslav Bedilo",
+  "author": "Viacheslav",
   "keywords": [
     "gatsby"
   ],
@@ -19,6 +19,7 @@
     "@mdx-js/react": "^2.3.0",
     "babel-plugin-styled-components": "^2.1.4",
     "gatsby": "^5.11.0",
+    "gatsby-background-image": "^1.6.0",
     "gatsby-plugin-image": "^3.11.0",
     "gatsby-plugin-manifest": "^5.11.0",
     "gatsby-plugin-mdx": "^5.11.0",
@@ -29,7 +30,8 @@
     "gatsby-transformer-sharp": "^5.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^6.0.5"
+    "styled-components": "^6.0.5",
+    "styled-normalize": "^8.0.7"
   },
   "devDependencies": {
     "@types/node": "^20.3.3",
