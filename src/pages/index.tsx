@@ -15,7 +15,7 @@ type Props = {};
 const index = (props: Props) => {
 	return (
 		<Layout>
-			<Title level={1} color="#ed6300" margin="0 10px 30px">
+			<Title level={3} margin="0 10px 30px">
 				Test page Gatsby
 			</Title>
 			<Hero
