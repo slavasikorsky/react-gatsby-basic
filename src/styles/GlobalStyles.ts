@@ -55,13 +55,13 @@ export const GlobalStyle = createGlobalStyle`
         font-family: var(--body-font-family);
         font-size: var(--body-font-size);
         font-weight: var(--body-font-weight);
-        color: ${({ theme }) => theme.colors.brand.gray};
+        color: ${({ theme }) => theme.colors.primary[300]};
     }
 
     h1 {
         margin: 0 0 20px;
         font-family: var(--heading-font-family);
-        color: ${({ theme }) => theme.colors.brand.blue};
+        color: ${({ theme }) => theme.colors.primary[200]};
     }
 
     p {

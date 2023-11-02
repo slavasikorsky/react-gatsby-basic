@@ -1,11 +1,5 @@
 import { DefaultTheme } from "styled-components";
 
-const COLORS = {
-	blue: "#007bf7",
-	white: "#f0efef",
-	gray: "#e8e8e8e",
-};
-
 const MEDIA_QUERY_SIZES = {
 	xs: "360px",
 	sm: "640px",
@@ -18,12 +12,23 @@ const createMediaQuery = (size: string) => `@media (min-width: ${size})`;
 
 const AppTheme: DefaultTheme = {
 	colors: {
-		brand: {
-			blue: COLORS.blue,
+		light: {
+			100: "#fff",
+			200: "#eee",
+			300: "#ddd",
+			400: "#ccc",
 		},
-		interface: {
-			white: COLORS.white,
-			gray: COLORS.gray,
+		dark: {
+			100: "#000",
+			200: "#111",
+			300: "#222",
+			400: "#333",
+		},
+		primary: {
+			100: "#a2ced",
+			200: "#3e1ac9",
+			300: "#0e619c",
+			400: "#177589",
 		},
 	},
 	mediaQuery: {
