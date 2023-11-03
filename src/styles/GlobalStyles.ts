@@ -46,6 +46,10 @@ export const GlobalStyle = createGlobalStyle`
         --heading-font-family: "Raleway-Black", sans-serif;
     }
 
+    * {
+        box-sizing: border-box;
+    }
+
     html {
         height: 100%;
         box-sizing: border-box;
