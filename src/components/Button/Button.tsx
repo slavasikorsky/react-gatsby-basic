@@ -30,9 +30,11 @@ const getStyledButton = (): React.ComponentType<ButtonProps> => {
 		border-radius: 4px;
 		transition: all 0.3s linear;
 		background-color: ${(props) =>
-			props.backgroundcolor ? props.backgroundcolor : "transparent"};
+			props.backgroundcolor
+				? props.backgroundcolor
+				: props.theme.colors.dark[300]};
 		color: ${(props) =>
-			props.color ? props.color : props.theme.colors.brand.gray};
+			props.color ? props.color : props.theme.colors.light[300]};
 		margin: ${(props) =>
 			props.margin ? props.margin : props.theme.margin};
 		${(props) => props.theme.mediaQuery.md} {

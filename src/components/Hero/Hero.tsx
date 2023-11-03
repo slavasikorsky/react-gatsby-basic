@@ -15,6 +15,7 @@ const getStyledHero = (): React.ComponentType<HeroProps> => {
 		height: 300px;
 		background: url(${(props) => (props.src ? props.src : "none")});
 		background-size: cover;
+		width: 100%;
 		display: flex;
 		align-items: center;
 		justify-content: center;

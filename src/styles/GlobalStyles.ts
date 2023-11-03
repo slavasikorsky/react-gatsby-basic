@@ -40,6 +40,7 @@ export const GlobalStyle = createGlobalStyle`
     :root {
         --body-font-size: 18px;
         --body-font-weight: 400;
+        --body-line-height: 22px;
         --body-letter-spacing: 1px;
         --body-font-family: "Raleway-Regular", sans-serif;
         --heading-font-family: "Raleway-Black", sans-serif;
@@ -55,6 +56,7 @@ export const GlobalStyle = createGlobalStyle`
         font-family: var(--body-font-family);
         font-size: var(--body-font-size);
         font-weight: var(--body-font-weight);
+        line-height: var(--body-line-height);
         color: ${({ theme }) => theme.colors.primary[300]};
     }
 

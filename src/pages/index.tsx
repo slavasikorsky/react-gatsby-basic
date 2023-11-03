@@ -4,58 +4,47 @@ import { SEO } from "../components/SEO/SEO";
 import { Title } from "../components/Title/Title";
 import { Text } from "../components/Text/Text";
 import { LinkBlock } from "../components/Link/Link";
-import { Container } from "../components/Container/Container";
+import { Container, Col, Row } from "../components/UI/Grid";
 import { Button } from "../components/Button/Button";
 import { Hero } from "../components/Hero/Hero";
-import { Row } from "../components/Row";
-import { Col } from "../components/Col";
 
 type Props = {};
 
 const index = (props: Props) => {
 	return (
 		<Layout>
-			<Title level={3} margin="0 10px 30px">
-				Test page Gatsby
-			</Title>
-			<Hero
-				title="Lorem ipsum dolor sit amet"
-				src="https://res.cloudinary.com/olanetsoft/image/upload/v1554336410/samples/bike.jpg"
-				margin="0 10px"
-			></Hero>
-			<Container margin="20px">
-				{/* TODO ROW COL COMPONENTS */}
-				<Row gap="40px">
-					<Col size={50}>
-						<Text color="#1f1f1f" margin="0 0 10px">
+			<Container maxWidth="1366px">
+				<Title level={1} margin="0 0 24px">
+					Test page Gatsby
+				</Title>
+				<Row justifyContent="space-around">
+					<Col flex={1} padding="10px">
+						<Text margin="0 0 24px">
 							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit. Libero id cum recusandae impedit, est officia
-							temporibus earum delectus suscipit cupiditate
-							explicabo excepturi aliquam ratione veritatis
-							magnam. Qui ipsam unde enim!
+							elit. Asperiores, sequi minus necessitatibus nostrum
+							a eveniet eaque modi laboriosam quisquam! Sequi
+							totam illo nesciunt aliquid recusandae inventore quo
+							quasi nihil doloribus.
 						</Text>
-						<LinkBlock to="/404" color="#ed6300" margin="0 0 20px">
-							Test link
-						</LinkBlock>
-					</Col>
-					<Col size={50}>
-						<Text color="#ccc" margin="0 0 10px">
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit. Libero id cum recusandae impedit, est officia
-							temporibus earum delectus suscipit cupiditate
-							explicabo excepturi aliquam ratione veritatis
-							magnam. Qui ipsam unde enim!
-						</Text>
-						<Button
-							to="/"
-							color="#ed6300"
-							backgroundcolor="#2d2d2d"
-							transform="scale(1.1)"
-						>
-							Test button
+						<Button to="/" margin="0 0 24px">
+							Button name
 						</Button>
 					</Col>
+					<Col flex={1} padding="10px">
+						<Text margin="0 0 24px">
+							Lorem ipsum dolor sit amet consectetur adipisicing
+							elit. Asperiores, sequi minus necessitatibus nostrum
+							a eveniet eaque modi laboriosam quisquam! Sequi
+							totam illo nesciunt aliquid recusandae inventore quo
+							quasi nihil doloribus.
+						</Text>
+					</Col>
 				</Row>
+				<Hero
+					title="Lorem ipsum dolor sit amet"
+					src="https://res.cloudinary.com/olanetsoft/image/upload/v1554336410/samples/bike.jpg"
+					margin="0 0 24px"
+				></Hero>
 			</Container>
 		</Layout>
 	);
