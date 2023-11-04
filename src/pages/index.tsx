@@ -13,11 +13,7 @@ type Props = {};
 const index = (props: Props) => {
 	return (
 		<Layout>
-			<Section
-				padding="20px"
-				backgroundColor="red"
-				backgroundImageName="500"
-			>
+			<Section padding="20px" backgroundImageName="section">
 				<Container maxWidth="1366px">
 					<Title level={1} margin="0 0 24px">
 						Test page Gatsby
@@ -32,8 +28,12 @@ const index = (props: Props) => {
 								aliquid recusandae inventore quo quasi nihil
 								doloribus.
 							</Text>
-							<Button to="/" margin="0 0 24px">
-								Button name
+							<Button
+								to="/"
+								margin="0 0 24px"
+								padding="12px 16px"
+							>
+								Button name long text
 							</Button>
 						</Col>
 						<Col flex={1} padding="10px">
