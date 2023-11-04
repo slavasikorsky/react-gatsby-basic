@@ -3,7 +3,7 @@ import { Layout } from "../layouts";
 import { SEO } from "../components/SEO/SEO";
 import { Title } from "../components/Title/Title";
 import { Text } from "../components/Text/Text";
-import { LinkBlock } from "../components/Link/Link";
+import { LinkComponent } from "../components/Link/Link";
 import { Container, Col, Row, Section } from "../components/UI/Grid";
 import { Button } from "../components/Button/Button";
 import { Hero } from "../components/Hero/Hero";
@@ -45,6 +45,9 @@ const index = (props: Props) => {
 								aliquid recusandae inventore quo quasi nihil
 								doloribus.
 							</Text>
+							<LinkComponent to="@" margin="0 0 24px" color="red">
+								Link here
+							</LinkComponent>
 						</Col>
 					</Row>
 					<Hero
