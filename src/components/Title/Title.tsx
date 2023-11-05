@@ -9,6 +9,7 @@ interface TitleProps {
 	color?: string;
 	margin?: string;
 	transform?: string;
+	css?: Object;
 }
 
 const fontSizes = ["26px", "24px", "20px", "18px", "16px", "14px"];

@@ -4,18 +4,62 @@ import { SEO } from "../components/SEO/SEO";
 import { Title } from "../components/Title/Title";
 import { Text } from "../components/Text/Text";
 import { LinkComponent } from "../components/Link/Link";
-import { Container, Col, Row, Section } from "../components/UI/Grid";
+import { Container, Col, Row, Section, Box } from "../components/UI/Grid";
 import { Button } from "../components/Button/Button";
 import { Hero } from "../components/Hero/Hero";
+import styled, { css } from "styled-components";
 
 type Props = {};
 
+type FormProps = {
+	email?: HTMLFormElement;
+};
+
 const index = (props: Props) => {
+	const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
+		event.preventDefault();
+		console.log((event.target as FormProps).email?.value);
+	};
+
+	const FormButton = styled(Button)`
+		width: 200px;
+		display: block;
+	`;
+
+	const Hero = styled(Section)`
+		min-height: 300px;
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+		justify-content: center;
+	`;
+
+	const HeroButton = styled(LinkComponent)`
+		display: inline-block;
+		text-align: center;
+		margin: 30px auto 0;
+		min-width: 200px;
+		border-radius: 10px;
+		background-color: ${({ theme }) => theme.colors.primary[300]};
+		color: ${({ theme }) => theme.colors.light[100]};
+		&:hover {
+			color: ${({ theme }) => theme.colors.dark[300]};
+		}
+	`;
+
 	return (
 		<Layout>
 			<Section padding="20px" backgroundImageName="section">
 				<Container maxWidth="1366px">
-					<Title level={1} margin="0 0 24px">
+					<Title
+						level={1}
+						margin="0 0 24px"
+						css={css`
+							text-align: center;
+							display: inline-block;
+							width: 100%;
+						`}
+					>
 						Test page Gatsby
 					</Title>
 					<Row justifyContent="space-around">
@@ -28,13 +72,6 @@ const index = (props: Props) => {
 								aliquid recusandae inventore quo quasi nihil
 								doloribus.
 							</Text>
-							<Button
-								to="/"
-								margin="0 0 24px"
-								padding="12px 16px"
-							>
-								Button name long text
-							</Button>
 						</Col>
 						<Col flex={1} padding="10px">
 							<Text margin="0 0 24px">
@@ -45,16 +82,48 @@ const index = (props: Props) => {
 								aliquid recusandae inventore quo quasi nihil
 								doloribus.
 							</Text>
-							<LinkComponent to="@" margin="0 0 24px" color="red">
+							<LinkComponent
+								type="link"
+								to="https://google.com"
+								margin="0 0 24px"
+								color="red"
+							>
 								Link here
 							</LinkComponent>
+
+							<LinkComponent
+								type="button"
+								to="https://google.com"
+								margin="0 0 24px"
+								color="#ccc"
+								backgroundColor="black"
+							>
+								Button here
+							</LinkComponent>
+							<Box as="form" onSubmit={onSubmitHandler}>
+								<label>
+									<span>Send me news please</span>
+									<input type="text" name="email" />
+								</label>
+								<FormButton type="submit" padding="12px 16px">
+									Send
+								</FormButton>
+							</Box>
 						</Col>
 					</Row>
-					<Hero
-						title="Lorem ipsum dolor sit amet"
-						src="https://res.cloudinary.com/olanetsoft/image/upload/v1554336410/samples/bike.jpg"
-						margin="0 0 24px"
-					></Hero>
+					{/* Hero image section */}
+					<Hero margin="40px 0" backgroundImageName="hero-image">
+						<Title level={2} margin="0 0 24px">
+							Lorem ipsum
+						</Title>
+						<Text margin="0 0 24px">
+							Lorem ipsum dolor sit amet consectetur adipisicing
+							elit. Asperiores
+						</Text>
+						<HeroButton type="button" to="/buy">
+							CTA button
+						</HeroButton>
+					</Hero>
 				</Container>
 			</Section>
 		</Layout>
