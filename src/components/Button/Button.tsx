@@ -1,9 +1,9 @@
 import React from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
 
 interface ButtonProps {
-	to: string;
+	onClick?: () => void;
+	type: "button" | "submit" | "reset";
 	children: React.ReactNode;
 	color?: string;
 	backgroundColor?: string;
@@ -17,12 +17,15 @@ const lineHeight = "20px";
 const mdFontSize = "18px";
 const mdLineHeight = "22px";
 
-export const Button = styled(Link)<ButtonProps>`
+export const Button = styled.button<ButtonProps>`
 	font-size: ${fontSize};
 	line-height: ${lineHeight};
 	display: inline-block;
 	text-decoration: none;
 	border-radius: 4px;
+	outline: none;
+	border: none;
+	cursor: pointer;
 	transition: all 0.3s linear;
 	transform: ${({ transform }) => transform || "none"};
 	background-color: ${({ backgroundColor, theme }) =>

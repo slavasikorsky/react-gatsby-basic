@@ -4,8 +4,10 @@ import styled from "styled-components";
 
 interface LinkProps {
 	to: string;
+	type: "button" | "link";
 	children: React.ReactNode;
 	color?: string;
+	backgroundColor?: string;
 	hoverColor?: string;
 	margin?: string;
 	padding?: string;
@@ -24,15 +26,22 @@ export const LinkComponent = styled(Link)<LinkProps>`
 	transition: all 0.3s linear;
 	transform: ${({ transform }) => transform || "none"};
 	color: ${({ color, theme }) => color || theme.colors.primary[100]};
+	background-color: ${({ backgroundColor }) =>
+		backgroundColor || "transparent"};
 	margin: ${({ margin }) => margin || "0"};
-	padding: ${({ padding }) => padding || "0"};
+	padding: ${({ padding, type }) =>
+		padding || (type === "button" ? "12px" : "0")};
+	text-decoration: ${({ type }) =>
+		type === "button" ? "none" : "underline"};
 	${({ theme }) => theme.mediaQuery.md} {
 		font-size: ${mdFontSize};
 		line-height: ${mdLineHeight};
 	}
 	&:hover {
-		color: ${({ hoverColor, theme }) =>
-			hoverColor || theme.colors.primary[400]};
+		color: ${({ hoverColor, type, theme }) =>
+			hoverColor ||
+			(type === "button" ? theme.colors.primary[400] : "inherit")};
 		text-decoration: none;
+		opacity: ${({ type }) => (type === "button" ? "1" : ".7")};
 	}
 `;
