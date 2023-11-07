@@ -1,12 +1,11 @@
 import React from "react";
 import { Layout } from "../layouts";
 import { SEO } from "../components/SEO/SEO";
-import { Title } from "../components/Title/Title";
-import { Text } from "../components/Text/Text";
-import { LinkComponent } from "../components/Link/Link";
+import { Title } from "../components/UI/Title/Title";
+import { Text } from "../components/UI/Text/Text";
+import { LinkComponent } from "../components/UI/Link/Link";
 import { Container, Col, Row, Section, Box } from "../components/UI/Grid";
-import { Button } from "../components/Button/Button";
-import { Hero } from "../components/Hero/Hero";
+import { Button } from "../components/UI/Button/Button";
 import styled, { css } from "styled-components";
 
 type Props = {};
