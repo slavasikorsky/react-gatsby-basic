@@ -30,19 +30,27 @@ const fontFace = {
 		fonts.ralewayRegular,
 		"truetype"
 	),
+	RalewayBold: createFontFace(
+		"Raleway-Bold",
+		700,
+		fonts.ralewayBold,
+		"truetype"
+	),
 };
 
 export const GlobalStyle = createGlobalStyle`
     ${normalize}
     ${fontFace.RalewayBlack}
     ${fontFace.RalewayRegular}
+    ${fontFace.RalewayBold}
 
     :root {
         --body-font-size: 18px;
         --body-font-weight: 400;
         --body-line-height: 22px;
         --body-letter-spacing: 1px;
-        --body-font-family: "Raleway-Regular", sans-serif;
+        --body-font-family: "Raleway-Regular", sans-serif; 
+        --bold-font-family: "Raleway-Bold", sans-serif;
         --heading-font-family: "Raleway-Black", sans-serif;
     }
 
@@ -64,13 +72,27 @@ export const GlobalStyle = createGlobalStyle`
         color: ${({ theme }) => theme.colors.primary[300]};
     }
 
-    h1 {
+    b,strong {
+        font-family: var(--bold-font-family);
+    }
+
+    h1,h2,h3,h4,h5,h6 {
         margin: 0 0 20px;
         font-family: var(--heading-font-family);
         color: ${({ theme }) => theme.colors.primary[200]};
+        font-weight: 500;
     }
 
     p {
         margin: 0 0 20px;
+    }
+
+    blockquote {
+        border-left: 1px solid #000;
+        padding: 10px;
+    }
+
+    blockquote > p {
+        margin: 0!important;
     }
 `;
