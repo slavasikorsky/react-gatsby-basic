@@ -7,7 +7,7 @@ interface HeaderProps {
 	children?: React.ReactElement | React.ReactElement[];
 	className?: string;
 	color?: string;
-	backgroundcolor?: string;
+	backgroundColor?: string;
 	margin?: string;
 }
 
@@ -15,15 +15,11 @@ const getStyledHeader = (): React.ComponentType<HeaderProps> => {
 	return styled["div"]`
 		display: flex;
 		flex-flow: column;
-		color: ${(props) =>
-			props.color ? props.color : props.theme.colors.brand.gray};
-		background-color: ${(props) =>
-			props.backgroundcolor
-				? props.backgroundcolor
-				: props.theme.colors.brand.black};
-		margin: ${(props) =>
-			props.margin ? props.margin : props.theme.margin};
-		${(props) => props.theme.mediaQuery.md} {
+		color: ${({ theme, color }) => color || theme.colors.dark[300]};
+		background-color: ${({ backgroundColor, theme }) =>
+			backgroundColor || theme.colors.primary[100]};
+		margin: ${({ margin }) => margin || "0"};
+		${({ theme }) => theme.mediaQuery.md} {
 			flex-flow: nowrap;
 		}
 	`;
@@ -38,7 +34,7 @@ const MainMenu = styled["ul"]`
 		margin: 0 10px;
 		list-style: none;
 		a[aria-current="page"] {
-			color: red;
+			color: green;
 		}
 	}
 `;
@@ -46,7 +42,7 @@ const MainMenu = styled["ul"]`
 export const HeaderBlock = ({
 	className,
 	color,
-	backgroundcolor,
+	backgroundColor,
 	margin,
 }: HeaderProps) => {
 	const HeaderComponent = getStyledHeader();
@@ -55,7 +51,7 @@ export const HeaderBlock = ({
 			className={className}
 			margin={margin}
 			color={color}
-			backgroundcolor={backgroundcolor}
+			backgroundColor={backgroundColor}
 		>
 			<Link to="/" style={{ margin: 20 }}>
 				<StaticImage
@@ -73,6 +69,12 @@ export const HeaderBlock = ({
 				</li>
 				<li>
 					<Link to="/500">500</Link>
+				</li>
+				<li>
+					<Link to="/privacy-policy">Privacy policy</Link>
+				</li>
+				<li>
+					<Link to="/about">About</Link>
 				</li>
 			</MainMenu>
 		</HeaderComponent>

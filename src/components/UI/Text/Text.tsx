@@ -1,10 +1,10 @@
-import React from "react";
 import styled from "styled-components";
 
 interface TextProps {
 	color?: string;
 	margin?: string;
 	transform?: string;
+	css?: Object;
 }
 
 export const Text = styled.p<TextProps>`

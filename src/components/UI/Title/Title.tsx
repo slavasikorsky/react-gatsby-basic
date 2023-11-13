@@ -19,9 +19,10 @@ const StyledTitle = styled.h1<TitleProps>`
 	font-family: "Raleway-Black";
 	font-weight: 500;
 	font-size: ${({ level }) => fontSizes[level - 1]};
+	line-height: 1.5em;
 	color: ${({ color, theme }) => color || theme.colors.primary[400]};
 	margin: ${({ margin }) => (margin ? margin : "0 0 18px")};
-	transform: ${({ transform }) => transform || "null"};
+	text-transform: ${({ transform }) => transform || "null"};
 	${({ theme }) => theme.mediaQuery.md} {
 		font-size: ${({ level }) => mdFontSizes[level - 1]};
 	}

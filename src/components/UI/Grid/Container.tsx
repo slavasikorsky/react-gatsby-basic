@@ -15,7 +15,7 @@ export const Container = styled.div<ContainerProps>`
 	flex-flow: column;
 	margin: ${({ margin }) => margin || "0 auto"};
 	padding: ${({ padding }) => padding || "0"};
-	max-width: ${({ maxWidth }) => maxWidth || "100%"};
+	max-width: ${({ maxWidth, theme }) => maxWidth || theme.width.large};
 	align-items: ${({ alignItems }) => alignItems || "flex-start"};
 	justify-content: ${({ justifyContent }) => justifyContent || "flex-start"};
 `;

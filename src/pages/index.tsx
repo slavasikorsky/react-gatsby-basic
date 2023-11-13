@@ -4,9 +4,10 @@ import { SEO } from "../components/SEO/SEO";
 import { Title } from "../components/UI/Title/Title";
 import { Text } from "../components/UI/Text/Text";
 import { LinkComponent } from "../components/UI/Link/Link";
-import { Container, Col, Row, Section, Box } from "../components/UI/Grid";
+import { Container, Col, Row, Box, Section } from "../components/UI/Grid";
 import { Button } from "../components/UI/Button/Button";
 import styled, { css } from "styled-components";
+import AppTheme from "../styles/Theme";
 
 type Props = {};
 
@@ -15,6 +16,7 @@ type FormProps = {
 };
 
 const index = (props: Props) => {
+	const { colors } = AppTheme;
 	const onSubmitHandler = (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		console.log((event.target as FormProps).email?.value);
@@ -63,7 +65,10 @@ const index = (props: Props) => {
 					</Title>
 					<Row justifyContent="space-around">
 						<Col flex={1} padding="10px">
-							<Text margin="0 0 24px">
+							<Text
+								margin="0 0 24px"
+								color={`${colors.light[100]}`}
+							>
 								Lorem ipsum dolor sit amet consectetur
 								adipisicing elit. Asperiores, sequi minus
 								necessitatibus nostrum a eveniet eaque modi
@@ -73,7 +78,10 @@ const index = (props: Props) => {
 							</Text>
 						</Col>
 						<Col flex={1} padding="10px">
-							<Text margin="0 0 24px">
+							<Text
+								margin="0 0 24px"
+								color={`${colors.light[100]}`}
+							>
 								Lorem ipsum dolor sit amet consectetur
 								adipisicing elit. Asperiores, sequi minus
 								necessitatibus nostrum a eveniet eaque modi
@@ -99,29 +107,37 @@ const index = (props: Props) => {
 							>
 								Button here
 							</LinkComponent>
-							<Box as="form" onSubmit={onSubmitHandler}>
-								<label>
-									<span>Send me news please</span>
-									<input type="text" name="email" />
-								</label>
-								<FormButton type="submit" padding="12px 16px">
-									Send
-								</FormButton>
-							</Box>
 						</Col>
 					</Row>
 					{/* Hero image section */}
-					<Hero margin="40px 0" backgroundImageName="hero-image">
-						<Title level={2} margin="0 0 24px">
+					<Hero margin="40px 0" backgroundImageName="sample">
+						<Title level={2} margin="0 0 24px" color="white">
 							Lorem ipsum
 						</Title>
-						<Text margin="0 0 24px">
+						<Text margin="0 0 24px" color="white">
 							Lorem ipsum dolor sit amet consectetur adipisicing
 							elit. Asperiores
 						</Text>
 						<HeroButton type="button" to="/buy">
 							CTA button
 						</HeroButton>
+					</Hero>
+					<Text color={`${colors.light[300]}`}>
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Expedita repellendus, velit pariatur eaque officia
+						praesentium doloremque vitae ab aspernatur earum ut, at
+						minima iusto a assumenda maxime rem molestias inventore!
+					</Text>
+					<Hero margin="40px 0" backgroundImageName="hero">
+						<Box as="form" onSubmit={onSubmitHandler}>
+							<label>
+								<span>Send me news please</span>
+								<input type="text" name="email" />
+							</label>
+							<FormButton type="submit" padding="12px 16px">
+								Send
+							</FormButton>
+						</Box>
 					</Hero>
 				</Container>
 			</Section>

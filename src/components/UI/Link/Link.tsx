@@ -5,6 +5,7 @@ import styled from "styled-components";
 interface LinkProps {
 	to: string;
 	type: "button" | "link";
+	target?: "_blank" | "_self" | "_parent";
 	children: React.ReactNode;
 	color?: string;
 	backgroundColor?: string;
