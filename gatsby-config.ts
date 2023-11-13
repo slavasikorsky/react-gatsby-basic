@@ -40,6 +40,14 @@ const config: GatsbyConfig = {
 			},
 			__key: "pages",
 		},
+		{
+			resolve: "gatsby-source-filesystem",
+			options: {
+				name: "pages",
+				path: `${__dirname}/content/`,
+			},
+			__key: "pages",
+		},
 	],
 };
 

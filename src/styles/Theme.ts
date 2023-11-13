@@ -25,7 +25,7 @@ const AppTheme: DefaultTheme = {
 			400: "#333",
 		},
 		primary: {
-			100: "#a2ced",
+			100: "#a2cedd",
 			200: "#3e1ac9",
 			300: "#0e619c",
 			400: "#177589",
@@ -37,6 +37,10 @@ const AppTheme: DefaultTheme = {
 		md: createMediaQuery(MEDIA_QUERY_SIZES.md),
 		lg: createMediaQuery(MEDIA_QUERY_SIZES.lg),
 		xl: createMediaQuery(MEDIA_QUERY_SIZES.xl),
+	},
+	width: {
+		small: "320px",
+		large: "1200px",
 	},
 };
 

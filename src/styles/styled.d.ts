@@ -29,5 +29,9 @@ declare module "styled-components" {
 			lg: string;
 			xl: string;
 		};
+		width: {
+			small: string;
+			large: string;
+		};
 	}
 }
